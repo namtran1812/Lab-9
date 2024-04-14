@@ -5,16 +5,12 @@ def encode(password):
         encoded_string += add_three
     return encoded_string
 
-def decode(encoded_string):
-    decoded_string = ''
-    count = ''
-    for char in encoded_string:
-        if char.isdigit():
-            count += char
-        else:
-            decoded_string += char * int(count)
-            count = ''
-    return decoded_string
+def decode(encoded):
+    decode = ''
+    for char in encoded:
+        decoded_char = chr(ord(char) - 1)
+        decode += decoded_char
+    return decode
 
 
 def main():
